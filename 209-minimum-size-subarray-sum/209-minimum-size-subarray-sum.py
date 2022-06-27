@@ -1,18 +1,17 @@
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        n = len(nums)
-        i = j = total = 0
-        min_len = n+1
-        s = 0
-        array = []
-        while j < n:
-            s = s + nums[j]
-            array.append(s)
-            total = array[j]
-            if total >= target:
-                while i <= j and total >= target:
-                    min_len = min(min_len, j-i+1)
-                    total = array[j] - array[i]
-                    i += 1
-            j += 1
-        return min_len if min_len != n+1 else 0
+        min_subarray = len(nums) + 1
+        window_start = 0
+        curr_count = 0
+        
+        for i in range(len(nums)):
+            curr_count += nums[i]
+            while curr_count >= target:
+                min_subarray = min(min_subarray, i - window_start + 1)
+                curr_count -= nums[window_start]
+                window_start += 1
+            
+            
+        if min_subarray == len(nums) + 1:
+            min_subarray = 0
+        return min_subarray
