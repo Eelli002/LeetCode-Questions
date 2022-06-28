@@ -7,7 +7,6 @@ class Solution:
             if abs(start - end) > k:
                 window_map.pop(nums[start])
                 start += 1
-                # if nums[start] in window_map: return True
                 
             if nums[end] in window_map: return True
             else: window_map[nums[end]] = 1
