@@ -9,6 +9,5 @@ class Solution:
                 min_length = min(min_length, end-start+1)
                 curr_count -= nums[start]
                 start += 1
-            
-        if min_length == sys.maxsize: return 0
-        else: return min_length
+                
+        return 0 if min_length == sys.maxsize else min_length
