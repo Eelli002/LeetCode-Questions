@@ -1,19 +1,18 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
-        count = 0
+        num_of_pali = 0
         
-        for i in range(len(s)):
-            start = end = i
-            while start >=0 and end < len(s) and s[start] == s[end]:
-                count += 1
-                start -=1
-                end +=1
+        for char in range(len(s)):
+            start = end = char
+            while start >= 0 and end < len(s) and s[start] == s[end]:
+                num_of_pali += 1
+                start -= 1
+                end += 1
             
-            start = i
-            end = i+1
-            while start >=0 and end < len(s) and s[start] == s[end]:
-                count += 1
-                start -=1
-                end +=1
-        
-        return count
+            start = char
+            end = char + 1
+            while start >= 0 and end < len(s) and s[start] == s[end]:
+                num_of_pali += 1
+                start -= 1
+                end += 1
+        return num_of_pali
