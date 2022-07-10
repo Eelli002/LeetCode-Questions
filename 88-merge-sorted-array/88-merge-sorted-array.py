@@ -16,5 +16,5 @@ class Solution:
             
         while n > 0:
             nums1[swapper] = nums2[n-1]
-            n-=1
-            swapper-=1
+            n -= 1
+            swapper -= 1
