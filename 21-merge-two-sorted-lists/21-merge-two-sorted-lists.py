@@ -11,13 +11,7 @@ class Solution:
         elif list1 == None: return list2
         elif list2 == None: return list1
         else:
-            if list1.val < list2.val:
-                newList = ListNode(list1.val)
-                list1 = list1.next
-            else:
-                newList = ListNode(list2.val)
-                list2 = list2.next
-
+            newList = ListNode(None)
             new_list_head = newList
 
             while list1 and list2:
@@ -33,4 +27,5 @@ class Solution:
             if list1: newList.next = list1
             else: newList.next = list2
 
+            new_list_head = new_list_head.next
             return new_list_head
