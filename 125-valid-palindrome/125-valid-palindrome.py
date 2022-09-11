@@ -11,4 +11,3 @@ class Solution:
                 end -= 1
             else: return False
         return True
-        
