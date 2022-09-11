@@ -2,6 +2,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:        
         start = 0
         end = len(s) - 1
+        i = 0
         
         while start < end:
             if not s[start].isalnum(): start += 1
@@ -10,4 +11,6 @@ class Solution:
                 start += 1
                 end -= 1
             else: return False
+            i += 1
+        print(i)
         return True
