@@ -7,9 +7,9 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         if head == None: return False
-        dictionary = {}
+        dictionary = []
         while head != None:
             if head in dictionary: return True
-            dictionary[head] = 1
+            dictionary.append(head)
             head = head.next
         return False
