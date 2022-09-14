@@ -30,14 +30,9 @@ class MyQueue:
         return len(self.stack) == 0
         
 
-
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
 # obj.push(x)
 # param_2 = obj.pop()
 # param_3 = obj.peek()
 # param_4 = obj.empty()
-
-
-[0,1,2,3]
-[3,2,1,0]
