@@ -1,64 +1,19 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        carry = False
-        bin_sum = ''
-        while a and b:
-            if a[-1] == '1' and b[-1] == '1':
-                if carry:
-                    bit = '1'
-                else:
-                    bit = '0'
-                    carry = True
-                    
-            elif (a[-1] == '1' and b[-1] == '0') or (a[-1] == '0' and b[-1] == '1'):
-                if carry: 
-                    bit = '0'
-                else:
-                    bit = '1'
-                    
-            else:
-                if carry:
-                    bit = '1'
-                    carry = False
-                else: bit = '0'
-            bin_sum = bit + bin_sum
-            a = a[:-1]
-            b = b[:-1]
+        answer = ''
+        carry = 0
         
-        print('curr sum: ', bin_sum)
+        a, b = a[::-1], b[::-1]
         
-        while a:
-            print('starting a')
-            if a[-1] == '1':
-                print('a')
-                if carry:
-                    bit = '0'
-                else:
-                    bit = '1'
-            else:
-                print('b')
-                if carry:
-                    bit = '1'
-                    carry = False
-                else: bit = '0'
-            bin_sum = bit + bin_sum
-            a = a[:-1]
-        
-        while b:
-            print('starting b')
-            if b[-1] == '1':
-                if carry:
-                    bit = '0'
-                else:
-                    bit = '1'
-            else:
-                if carry:
-                    bit = '1'
-                    carry = False
-                else: bit = '0'
-            bin_sum = bit + bin_sum
-            b = b[:-1]
-
-        if carry: bin_sum = '1' + bin_sum
+        for i in range(max(len(a), len(b) )):
+            char_a = ord(a[i]) - ord('0') if i < len(a) else 0
+            char_b = ord(b[i]) - ord('0') if i < len(b) else 0
             
-        return bin_sum
+            total = char_a + char_b + carry
+            char_sum = str(total % 2)
+            answer = char_sum + answer
+            carry = total //2
+            
+        if carry: answer = '1' + answer
+            
+        return answer
