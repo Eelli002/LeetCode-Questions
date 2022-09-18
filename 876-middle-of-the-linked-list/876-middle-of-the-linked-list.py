@@ -5,19 +5,10 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = curr = head
         
-        def Length(node):
-            if not node: return 0
-            length = 1
-            while node.next:
-                node = node.next
-                length += 1
-            return length
+        while curr and curr.next:
+            prev = prev.next
+            curr = curr.next.next
         
-        length = Length(head)
-        print(length)
-        midpoint = length // 2
-        for i in range(midpoint):
-            head = head.next
-        return head
-        
+        return prev
