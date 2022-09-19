@@ -1,7 +1,6 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        s_total = ''
-        t_total = ''
+        s_total = t_total = ''
         
         for char in s:
             if char == '#':
