@@ -3,7 +3,6 @@ class Solution:
         s_total = []
         t_total = []
         
-        
         for char in s:
             if char == '#':
                 if s_total: s_total.pop()
