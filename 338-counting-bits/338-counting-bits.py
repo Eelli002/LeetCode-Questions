@@ -1,11 +1,11 @@
 class Solution:
     def countBits(self, n: int) -> List[int]:
-        answer = []
-        for i in range(0, n+1, 1):
-            one_count = 0
-            bin_str = str(bin(i))
-            for char in bin_str:
-                if char == '1': one_count += 1
-            answer.append(one_count)
-            
-        return answer
+        dp = [0] * (n+1)
+        offset = 1
+        
+        for i in range(1, n+1):
+            if offset * 2 == i:
+                offset = i
+            dp[i] = 1 + dp[i - offset]
+        
+        return dp
