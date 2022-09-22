@@ -3,14 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        zero_shift = 0
-        for i in range(len(nums)):
-            if nums[i] == 0:
-                zero_shift += 1
-                
-            else:
-                nums[i - zero_shift] = nums[i]
-                
-        for idx in range(len(nums)-zero_shift, len(nums)):
-            nums[idx] = 0
-                
+        l = 0
+        for r in range(len(nums)):
+            if nums[r] != 0:
+                temp = nums[l]
+                nums[l] = nums[r]
+                nums[r] = temp
+                l += 1
