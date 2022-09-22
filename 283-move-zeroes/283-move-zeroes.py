@@ -7,6 +7,6 @@ class Solution:
         for r in range(len(nums)):
             if nums[r] != 0:
                 temp = nums[l]
-                nums[l], nums[r] = nums[r], nums[l]
+                nums[l] = nums[r]
                 nums[r] = temp
                 l += 1
