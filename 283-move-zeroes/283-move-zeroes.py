@@ -4,7 +4,6 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         zero_shift = 0
-        print(nums)
         for i in range(len(nums)):
             if nums[i] == 0:
                 zero_shift += 1
@@ -14,5 +13,4 @@ class Solution:
                 
         for idx in range(len(nums)-zero_shift, len(nums)):
             nums[idx] = 0
-        print(nums)
                 
