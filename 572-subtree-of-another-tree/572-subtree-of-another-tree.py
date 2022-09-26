@@ -8,7 +8,7 @@ class Solution:
     def Is_Same(self, r, sr):
             if not r and not sr: return True
             if not r or not sr or r.val != sr.val: return False
-            return (self.Is_Same(r.left, sr.left) and self.Is_Same(r.right, sr.right))
+            return (self.Is_Same(r.left, sr.left) & self.Is_Same(r.right, sr.right))
         
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root: 
@@ -17,4 +17,4 @@ class Solution:
         if root.val == subRoot.val and self.Is_Same(root, subRoot): 
                 return True
         
-        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+        return self.isSubtree(root.left, subRoot) | self.isSubtree(root.right, subRoot)
