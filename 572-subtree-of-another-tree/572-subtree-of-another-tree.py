@@ -21,8 +21,9 @@ class Solution:
         
         print("root.val: ", root.val)
         
-        if self.Is_Same(root, subRoot): 
-            print('2')
-            return True
+        if root.val == subRoot.val:
+            if self.Is_Same(root, subRoot): 
+                print('2')
+                return True
         
         return self.isSubtree(root.left, subRoot) | self.isSubtree(root.right, subRoot)
