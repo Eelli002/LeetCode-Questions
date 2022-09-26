@@ -8,12 +8,8 @@ class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         
         def BST(l, r):
-            print(l, r)
             if l > r: return None
-            mp = (l+r) // 2
-            
-            print(nums[mp])
-            
+            mp = (l+r) // 2            
             root = TreeNode(nums[mp])
             root.left = BST(l, mp-1)
             root.right = BST(mp+1, r)
