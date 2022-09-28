@@ -1,6 +1,6 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        total_sum = nums[0]
+        total_sum = ~sys.maxsize
         curr_sum = 0
         
         for num in nums:
