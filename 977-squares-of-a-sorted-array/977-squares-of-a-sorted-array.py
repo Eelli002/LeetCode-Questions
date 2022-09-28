@@ -3,10 +3,7 @@ class Solution:
         answer = []
         l, r = 0, len(nums)-1
         while l <= r:
-            if nums[l] < 0: nums[l] = abs(nums[l])
-            if nums[r] < 0: nums[r] = abs(nums[r])
-                
-            if nums[l] < nums[r]:
+            if nums[l] * nums[l] < nums[r] * nums[r]:
                 answer.append(nums[r]*nums[r])
                 r -= 1
             else:
