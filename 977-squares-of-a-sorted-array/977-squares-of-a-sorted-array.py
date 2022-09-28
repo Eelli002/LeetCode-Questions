@@ -12,4 +12,5 @@ class Solution:
             else:
                 answer.append(nums[l]*nums[l])
                 l += 1
-        return reversed(answer)
+        answer.reverse()
+        return answer
